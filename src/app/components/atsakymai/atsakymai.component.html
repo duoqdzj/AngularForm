@@ -1,0 +1,28 @@
+<div class="col-md-12 m-5">
+
+    <div class="alert alert-info" *ngIf="isLoading">
+        Informacija kraunama ....
+    </div>
+
+
+
+    <div class="card" *ngIf="!isLoading">
+        <div class="card-header">
+            Atsakymai
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="mb-3">
+                    <div class="card-body">
+                      <!-- pasiimu poll[] masyva su  *ngFor="let poll of pollsAnswers; let i=index"-->
+                     
+                      <app-atsakymai-items  *ngFor="let poll of pollsAnswers; let i=index;" [poll]="poll"></app-atsakymai-items>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

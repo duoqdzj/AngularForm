@@ -1,0 +1,87 @@
+<form >
+    <div class="form-row">
+    <div class="col m-3">
+      <!-- pasiimu duomenis is masyvo su {{poll.name}} -->
+        <h5>{{poll.name}}</h5>
+    </div>
+    <div class="col m-3">
+        <h5> {{poll.surname}}</h5>
+    </div>
+    <div class="col m-3">
+        <h5> {{poll.email}}</h5>
+    </div>
+    <div class="col m-3">
+        <h5>{{poll.phone}}</h5>
+    </div>
+
+
+  
+        <div class="card m-3">
+            <div class="card-body">
+                
+                    <div class="form-check m-3">
+                        <label>
+                        Koks žalios bangos ilgis?
+                        </label><br><br>
+                      </div>
+                    <div class="form-check m-3">
+                        <input class="form-check-input" type="radio" name="radio1" id="exampleRadios1"  value="300nm" checked>
+                        <label class="form-check-label" for="exampleRadios1" >
+                        400nm  
+                        <p> "{{poll.radio1}}" buvo pasirinkes {{poll.name}}</p>
+                        </label>
+
+                      </div>
+                
+            </div>
+        </div>
+   
+    
+   
+        <div class="card m-3">
+            <div class="card-body">
+                
+                    <div class="form-check m-3">
+                        <label>
+                        Kokios dalelės įeina į atomo branduolį?
+                        </label><br><br>
+                      </div>
+                      <div class="form-check m-3">
+                        <input class="form-check-input" type="radio" name="radio2" id="exampleRadios2" value="option2" checked>
+                        <label class="form-check-label" for="exampleRadios2">
+                        Mezonas
+                        <p> "{{poll.radio2}}" buvo pasirinkes {{poll.name}}</p>
+                        </label>
+                      </div>
+
+                
+            </div>
+        
+         </div>
+    
+   
+        <div class="card m-3">
+            <div class="card-body">
+                
+                    <div class="form-check m-3">
+                        <label>
+                        Kas suskaičiavo iki begalybės du kartus
+                        </label><br><br>
+                      </div>
+
+                      <div class="form-check m-3">
+                        <input class="form-check-input" type="radio" name="radio3" id="exampleRadios2" value="option2" checked>
+                        <label class="form-check-label" for="exampleRadios2">
+                        Alfa vyras
+                        <p> "{{poll.radio3}}" buvo pasirinkes {{poll.name}}</p>
+                        </label>
+                      </div>
+
+                      
+                
+            </div>
+        </div>
+    
+
+</div>
+</form>
