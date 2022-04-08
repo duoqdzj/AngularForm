@@ -19,18 +19,8 @@ export class PollsService {
   constructor(private http:HttpClient) { }
 
   public getPolls(){
-    console.log("Uzkraunu poll");
-    //subscribe duoda atsaka kai viskas gerai, kai error, kai duomenys persiusti
 
     return this.http.get<Poll[]>("http://localhost:8080/customers/")
-
-
-    // this.http.get<Poll[]>("http://localhost:8080/customers/").subscribe(
-    //   (response)=>{
-    //     // console.log("duomenys persiusti");
-    //     // console.log(response);
-    //     this.polls=response;
-
 
       }
     
