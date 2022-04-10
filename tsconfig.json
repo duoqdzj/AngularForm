@@ -1,7 +1,13 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
+  "forceConsistentCasingInFileNames": false,
+  "strict": false,
+  "noImplicitReturns": false,
+  "noFallthroughCasesInSwitch": false,
+  
   "compilerOptions": {
+    "strictNullChecks": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

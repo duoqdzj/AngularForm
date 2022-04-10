@@ -4,14 +4,13 @@
         <div class="card-header">
             <h2>Klausimai</h2>
         </div>
-        <div class="card-body">
+        <div class="card-body"> 
 
-            <!--  #f="ngForm" f-kintamasis, o ngForm paima reiksmes ivestas is formos-->
-            <!-- (ngSubmit)="onSubmit(f)" siunciu duomenis i funkcija .ts -->
-            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                 <div class="form-row">
-                <div class="col m-3">
-            <!-- priskiriu kintamuosius su ngModel name="name" -->
+                <div class="col m-3"> 
+          
                     <input type="text" class="form-control" placeholder="Vardas" ngModel name="name">
                 </div>
                 <div class="col m-3">
@@ -24,119 +23,53 @@
                     <input type="text" class="form-control" placeholder="Telefono nr." ngModel name="phone">
                 </div>
 
+            
 
-              
-                    <div class="card m-3">
-                        <div class="card-body">
-                            
-                                <div class="form-check m-3">
-                                    <label>
-                                    Koks žalios bangos ilgis?
-                                    </label><br><br>
-                                  </div>
-                                <div class="form-check m-3">
-                                    <input class="form-check-input" type="radio" ngModel name="radio1" id="exampleRadios1" value="300nm" checked>
-                                    <label class="form-check-label" for="exampleRadios1">
-                                    300nm
-                                    </label>
-                                  </div>
-                                  <div class="form-check m-3">
-                                    <input class="form-check-input" type="radio" ngModel name="radio1" id="exampleRadios2" value="400nm">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                    400nm
-                                    </label>
-                                  </div>
-                                  <div class="form-check m-3">
-                                    <input class="form-check-input" type="radio" ngModel name="radio1" id="exampleRadios3" value="500nm">
-                                    <label class="form-check-label" for="exampleRadios3">
-                                    500nm
-                                    </label>
-                                  </div>
-                            
-                        </div>
-                    </div>
-               
-                
-               
-                    <div class="card m-3">
-                        <div class="card-body">
-                            
-                                <div class="form-check m-3">
-                                    <label>
-                                    Kokios dalelės įeina į atomo branduolį?
-                                    </label><br><br>
-                                  </div>
-                                <div class="form-check m-3">
-                                    <input class="form-check-input" type="radio" ngModel name="radio2" id="exampleRadios1" value="Elektronas" >
-                                    <label class="form-check-label" for="exampleRadios1">
-                                    Elektronas
-                                    </label>
-                                  </div>
-                                  <div class="form-check m-3">
-                                    <input class="form-check-input" type="radio" ngModel name="radio2" id="exampleRadios2" value="Mezonas">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                    Mezonas
-                                    </label>
-                                  </div>
-                                  <div class="form-check m-3">
-                                    <input class="form-check-input" type="radio" ngModel name="radios" id="exampleRadios3" value="Bizonas">
-                                    <label class="form-check-label" for="exampleRadios3">
-                                    Bizonas
-                                    </label>
-                                  </div>
-                                  <div class="form-check m-3">
-                                    <input class="form-check-input" type="radio" ngModel name="radio2" id="exampleRadios4" value="Kojotas">
-                                    <label class="form-check-label" for="exampleRadios3">
-                                    Kojotas
-                                    </label>
-                                  </div>
-                            
-                        </div>
-                    
-                     </div>
-                
-               
-                    <div class="card m-3">
-                        <div class="card-body">
-                            
-                                <div class="form-check m-3">
-                                    <label>
-                                    Kas suskaičiavo iki begalybės du kartus
-                                    </label><br><br>
-                                  </div>
-                                <div class="form-check m-3">
-                                    <input class="form-check-input" type="radio" ngModel name="radio3" id="exampleRadios1" value="Klintas Eastwoodas" >
-                                    <label class="form-check-label" for="exampleRadios1">
-                                    Klintas Eastwoodas
-                                    </label>
-                                  </div>
-                                  <div class="form-check m-3">
-                                    <input class="form-check-input" type="radio" ngModel name="radio3" id="exampleRadios2" value="Alfa vyras">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                    Alfa vyras
-                                    </label>
-                                  </div>
-                                  <div class="form-check m-3">
-                                    <input class="form-check-input" type="radio" ngModel name="radio3" id="exampleRadios3" value="Vitalija Katunskytė">
-                                    <label class="form-check-label" for="exampleRadios3">
-                                    Vitalija Katunskytė
-                                    </label>
-                                  </div>
-                                  
-                            
-                        </div>
-                    </div>
-                
+                <div class="card m-3"  *ngFor="let questions of questionsQ; let i=index; trackBy: trackByItems" [questions]="questions" [attr.data-index]="i">
+                  <div class="card-body" >
+                      
+                          <div class="form-check m-3">
+                              <label>
+                              {{questions.query}}
+                              </label><br><br>
+                            </div>
+                          <div class="form-check m-3">
+                              <input class="form-check-input"  type="radio" ngModel name="radio{{i+1}}" id="exampleRadios1" value="{{questions.radio1}}" checked>
+                              <label class="form-check-label" for="exampleRadios1">
+                              {{questions.radio1}}
+                              </label>
+                            </div>
+                            <div class="form-check m-3">
+                              <input class="form-check-input" type="radio" ngModel name="radio{{i+1}}" id="exampleRadios2" value="{{questions.radio2}}">
+                              <label class="form-check-label" for="exampleRadios2">
+                              {{questions.radio2}}
+                              </label>
+                            </div>
+                            <div class="form-check m-3">
+                              <input class="form-check-input" type="radio" ngModel name="radio{{i+1}}" id="exampleRadios3" value="{{questions.radio3}}">
+                              <label class="form-check-label" for="exampleRadios3">
+                              {{questions.radio3}}
+                              </label>
+                            </div>
+                            <div class="form-check m-3" *ngIf="questions.radio4"> <!--If "product" exists-->
+                              <input class="form-check-input" type="radio" ngModel name="radio{{i+1}}" id="exampleRadios3" value="{{questions.radio4}}">
+                              <label class="form-check-label" for="exampleRadios3">
+                              {{questions.radio4}}
+                              </label>
+                            </div>
+                      
+                  </div>
+              </div>
+
 
                 <button class="btn btn-primary m-3" type="submit">Pateikti</button>
                 <button  class="btn btn-link" (click)="reloadCurrentPage()">Valyti formą</button>
 
-            </div>
+              </div>
             </form>
         </div>
     </div>
 </div>
-   
     
     
 

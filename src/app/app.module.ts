@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { AtsakymaiItemsComponent } from './components/atsakymai/atsakymai-items/atsakymai-items.component';
 
+
 const appRoutes:Routes=[
   {path:'', component:ListComponent},
   {path:'atsakymai',component:AtsakymaiComponent}
@@ -22,7 +23,8 @@ const appRoutes:Routes=[
     ListComponent,
     AtsakymaiComponent,
     NavigationComponent,
-    AtsakymaiItemsComponent
+    AtsakymaiItemsComponent,
+  
   ],
   imports: [
     BrowserModule,
